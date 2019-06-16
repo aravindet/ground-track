@@ -31,3 +31,23 @@
     transform: rotate(360deg);
   }
 }
+
+.Transit {
+  display: flex;
+  flex: row;
+  padding: 8px 48px;
+  align-items: center;
+}
+
+.Transit > * {
+  flex: 1;
+  text-align: left;
+}
+
+.Transit > button {
+  background-color: #000;
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  text-align: center;
+}
