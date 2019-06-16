@@ -7,7 +7,7 @@ const socket = net.connect(4533, '192.168.43.109');
 socket.on('error', (e) => console.log('Socket error', e));
 
 const app = express();
-app.use(express.static('./public'));
+app.use(express.static('./build'));
 const server = http.createServer(app).listen(8080);
 const wss = new WebSocket.Server({ server });
 
