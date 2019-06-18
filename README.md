@@ -2,13 +2,13 @@
 
 Moves an antenna to track amateur satellites.
 
-This was built at a workshop, is grossly buggy and incomplete, and is not intended for any sort of production use. As far as I know, it works only with one particular antenna built by [Roland Turner](https://github.com/rolandturner).
+This was built at a workshop, is grossly buggy and incomplete, and is not intended for any sort of production use.
 
 # Features
 
 - Detects the current location using geolocation APIs
 - Shows satellites that will transit the current location in the next hour
-- Generates and sends commands to make the antenna track a chosen satellite
+- Generates and sends [rotator commands](https://www.mankier.com/1/rotctl#Commands-Rotator_Commands) to make the antenna track a chosen satellite
 
 This app performs all calculations in the browser and sends commands to the antenna via a small node WebSockets -> TCP proxy server. It uses orbital parameters from [celestrak](http://www.celestrak.com) and the [jspredict](https://github.com/nsat/jspredict) library for calculations.
 
@@ -18,7 +18,9 @@ To run the proxy server, `node proxy.js`. You may need to edit the antenna's hos
 
 To run the client in development mode, `npm start` and access it at `localhost:3000`. If you aren't developing the client, you may also build the client using `npm run build` and the proxy server will serve it.
 
-To update satellite data, copy http://www.celestrak.com/NORAD/elements/amateur.txt to `scripts/` and run `node scripts/convert.js`
+To update satellite data, copy http://www.celestrak.com/NORAD/elements/amateur.txt to `scripts/` and run `node scripts/convert.js`.
+
+Use the [antenna rotation simulator](https://github.com/rolandturner/ground-simulator) to test.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
